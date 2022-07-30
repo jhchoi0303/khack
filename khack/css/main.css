@@ -1,0 +1,90 @@
+Body {
+	background : #FFEC7C;
+	font : 12px "Swis721 BT", Arial, Helvetica, "sans-serif";
+	margin-top : 8px;
+	margin-bottom : 8px;
+}
+a:link {
+	color : #000000;
+	background : transparent;
+	font : 10pt "Swis721 BT", Arial, Helvetica, "sans-serif" : normal;
+	text-decoration : none ;
+}
+a:visited {
+	color : #000000;
+	background : transparent;
+	font : 10pt "Swis721 BT", Arial, Helvetica, "sans-serif" : normal;
+	text-decoration : none ;
+}
+a:hover {
+	color : #000000;
+	background : #FFEC7C;
+	font : 10pt "Swis721 BT", Arial, Helvetica, "sans-serif" : normal;
+	text-decoration : none ;
+}
+a:active {
+	color : #000000;
+	background : transparent;
+	font : 10pt "Swis721 BT", Arial, Helvetica, "sans-serif" : normal;
+	text-decoration : none ;
+}
+.TextLink {
+	font-size : 9pt;
+	color : #0000FF;
+	Text-decoration : underline;
+	background-color : #FFFFFF;
+	font-weight : normal;
+	font-style : normal;
+}
+.PageHeader{
+	background : #FFA57B;
+	color : #000000;
+	font : normal normal 16px "Swis721 BT", Arial, Helvetica, "sans-serif";
+	text-align : center;
+	border-left : 1px solid Black;
+	border-bottom : 1px solid Black;
+	border-right : 1px solid Black;
+	border-top : 1px solid Black;
+}
+.BodyNews {
+	background : #FFFFFF;
+	color : #000000;
+	font : 9pt "Swis721 BT", Arial, Helvetica, "sans-serif";
+	padding-left : 4px;
+	padding-right : 4px;
+	padding-bottom : 4px;
+	padding-top : 4px;
+}
+.OddHeader {
+	background : #FF7B91;
+	color : #000000;
+	font : normal 14px "Swis721 BT", Arial, Helvetica, "sans-serif";
+	text-align : center;
+	padding-bottom : 1px;
+	padding-left : 2px;
+	padding-top : 1px;
+	padding-right : 2px;
+	height : 20px;
+}
+.EvenHeader {
+	background : #FFA57B;
+	color : #000000;
+	font : normal 14px "Swis721 BT", Arial, Helvetica, "sans-serif";
+	text-align : center;
+	padding-bottom : 1px;
+	padding-left : 2px;
+	padding-top : 1px;
+	padding-right : 2px;
+	height : 20px;
+}
+.Links {
+	background : #7B90FF;
+	color : #000000;
+	font : normal 13px "Swis721 BT", Arial, Helvetica, "sans-serif";
+	text-align : center;
+	padding-bottom : 1px;
+	padding-left : 2px;
+	padding-top : 1px;
+	padding-right : 2px;
+	height : 20px;
+}
