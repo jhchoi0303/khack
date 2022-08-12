@@ -13,46 +13,33 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 $conn = dbconnect($host,$dbid,$dbpass,$dbname);
 
-mysqli_query( $conn, "set autocommit = 0");
-mysqli_query( $conn, "set session transaction isolation level serializable");
-mysqli_query( $conn, "start transaction");
-
-
-
-
 
 $id = $_GET['problem_id'];
-
-
 $login_id = $_SESSION['id'];
 
-$ret = mysqli_query($conn, "select * from problem where id='$id'");
+$ret = mysqli_query($conn, "select * from problem where id= $id");
 $row = mysqli_fetch_assoc($ret);
 
 
 if($login_id != $row['problem_author']){
 	s_msg('작성자가 아니여서 지우지 못합니다!');
-	echo "<meta http-equiv='refresh' content='0;url=problem_list.php'>";
 }
 
 else{
 	
-	$ret = mysqli_query($conn, "delete from problem where id= $id");
-	
-	if(!$ret){
-	
-	mysqli_query($conn, "rollback");
-    msg('Query Error : write-up 또는 solve가 존재하므로 지울 수 없습니다');
-		
+
+	try {
+		$conn->query("delete from problem where id= $id");
+
+	} catch (Exception $e) {
+		//uh-oh, maybe a foreign key restraint failed?
+		if ($e->getCode() == '1451') {
+			s_msg("이미 솔버가 있는 문제라 삭제가 불가능합니다!");
+			echo "<meta http-equiv='refresh' content='0;url=problem_list.php'>";
+			//yep, it failed.  Do some stuff.
+		}
 	}
 	
-	else{
-	
-	mysqli_query($conn, "commit");
-    s_msg ('성공적으로 삭제 되었습니다');
-    echo "<meta http-equiv='refresh' content='0;url=problem_list.php'>";
-		
-	}
 }
 ?>
 

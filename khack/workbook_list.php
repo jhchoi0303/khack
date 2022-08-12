@@ -4,16 +4,18 @@ include "config.php";
 include "util.php";     
 ?>
 
-
 <div class="column">
+<div class="nes-field is-inline">
  <form action="workbook_list.php" method="get">
-       <input style='margin-bottom:20px' type="text" name="search_keyword" placeholder="workbook 통합검색 (workbook 제목)">
+ <input style='margin-top:30px; margin-bottom:30px' name="search_keyword" type="text" id="inline_field" class="nes-input is-success" placeholder="workbook 통합검색 (workbook 제목)">
  </form>
+</div>
+</div>
  
 
     <?
     $conn = dbconnect($host, $dbid, $dbpass, $dbname);
-    $query = "SELECT * from workbook join workbook_problem,member where workbook.id=workbook_problem.workbook_id and member.id=creator ";
+    $query = "SELECT * from workbook join workbook_problem,member where workbook.id=workbook_problem.workbook_id and member.id=creator";
     
     if (array_key_exists("search_keyword", $_GET)) {  
         $search_keyword = $_GET["search_keyword"];
@@ -59,7 +61,7 @@ include "util.php";
         
         </tbody>
     </table>
-     <a href='workbook_form.php'><button class='nes-btn is-primary'>연습문제 등록</button></a>
+     <a href='workbook_form.php'>연습문제 등록</a>
     <script>
         function deleteConfirm(workbook_id) {
             if (confirm("정말 삭제하시겠습니까?") == true){    //확인

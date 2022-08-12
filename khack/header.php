@@ -17,6 +17,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <title>K-Hack</title>
     <meta charset="UTF-8">
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/blocks.css/dist/blocks.min.css" />
     <link href="styles.css" rel="stylesheet" />
     <script src="jquery-3.5.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -36,7 +37,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         			<option value="main.php" >메뉴를 선택하세요...</option>
         			<option value="main.php">홈</option>
         			<option value="problem_list.php">문제 목록</option>
-        			<option value="workbook_list.php">연습 문제집</option>
         			<option value="writeup_list.php">풀이 목록</option>
         			<option value="flag_submit.php">플래그 제출하기</option>
         			<option value="lecture_list.php">강의</option>
@@ -50,3 +50,5 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
     </div>
 </form>
+
+

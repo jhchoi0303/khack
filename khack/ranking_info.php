@@ -9,8 +9,8 @@ if (array_key_exists("member_id", $_GET)) {
     $id = $_GET["member_id"];
     $query = "SELECT * from member where id='$id'";
     $res = mysqli_query($conn, $query);
-    
-    $query2 = "SELECT * from (select *, solves.id as solves_id, count(member_id) as counts from solves group by member_id) t1 right outer join (select *, member.id as personal_id from member) t2 on ( t1.member_id = t2.personal_id) and t1.member_id =$id;";
+
+    $query2 = "SELECT * from (select member_id, count(solves.id) as counts from solves group by member_id) t1 right outer join (select *, member.id as personal_id from member) t2 on ( t1.member_id = t2.personal_id) and (t1.member_id =$id and personal_id=$id) where member_id is not null;";
     $res2 = mysqli_query($conn, $query2);
     $rank = mysqli_fetch_assoc($res2);
    
@@ -23,7 +23,9 @@ if (array_key_exists("member_id", $_GET)) {
         회원 정보
       </h2>
     </div>
-  </nav>
+
+
+
 
   <div class="container" style="margin-bottom: 50px;">
 
@@ -76,11 +78,11 @@ if (array_key_exists("member_id", $_GET)) {
   
      <!-- right      -->
       <div class="col-md-8 col-sm-12 col-xs-12">
-        <div class="nes-container with-title">
+        <div class="nes-container with-title" style='width:700px;'>
           <h2 style='font-size:30px'class="title">푼 문제 구성</h2>
          
    
-      <div id="problem_types" style="width: 900px; height: 500px;"></div>
+      <div id="problem_types" style="width: 600px; height: 500px;"></div>
 
 <?
 	$query = "select personal_id,problem_id, type, username from (select type,problem_id,member_id, solves.id as solves_id from solves join problem on solves.problem_id=problem.id) as t1 join (select username, solves.id as solves_id, member.id as personal_id from member join solves on solves.member_id = member.id) t2 on t1.solves_id = t2.solves_id where personal_id=$id;";

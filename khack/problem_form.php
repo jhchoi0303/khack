@@ -66,12 +66,14 @@ if (array_key_exists("problem_id", $_GET)) {
 
 
 ?>
-    <div class="container">
+<div class= "container2">
+    <div class="wrapper block" style="padding: 100px; width:100%; height:60%">
         <form name="problem_form" action="<?=$action?>" method="post" class="fullwidth">
            <input type="hidden" name="id" value="<?=$problem['problem_id']?>"/>
             <h3>문제 정보 <?php echo $mode; ?></h3>
             <p>
                 <label for="type">해킹문제 분류</label>
+                <div class="nes-select is-warning">
                 <select name="type" id="type">
                     <option value="-1">선택해 주십시오.</option>
                     <option value="Reversing">리버싱</option>
@@ -81,30 +83,31 @@ if (array_key_exists("problem_id", $_GET)) {
                     <option value="Crypto">암호학</option>
                     <option value="Etc">기타</option>
                 </select>
+</div>
             </p>
             <p>
                 <label for="title">문제 제목</label>
-                <input type="text" placeholder="문제 제목 입력" id="title" name="title" value="<?=$problem['title']?>"/>
+                <input class="nes-input" type="text" placeholder="문제 제목 입력" id="title" name="title" value="<?=$problem['title']?>"/>
             </p>
             
            
           	<p>
                 <label for="file">문제 파일 링크</label>
-                <input type="text" placeholder="파일 링크 입력" id="file" name="file" rows="10" value="<?=$problem['file']?>"/></input>
+                <input class="nes-input" type="text" placeholder="파일 링크 입력" id="file" name="file" rows="10" value="<?=$problem['file']?>"/></input>
             </p>
             
             <p>
                 <label for="explanation">문제 설명</label>
-                <textarea style="width:100%;" placeholder="문제 설명 입력" id="explanation" name="explanation" cols= "11" rows="10"><?=$problem['explanation']?></textarea>
+                <textarea class="nes-textarea" style="width:100%;" placeholder="문제 설명 입력" id="explanation" name="explanation" cols= "11" rows="10"><?=$problem['explanation']?></textarea>
             </p>
             <p>
                 <label for="points">문제 배점</label>
-                <input type="text" placeholder="정수로 입력" id="points" name="points" value="<?=$problem['points']?>" />
+                <input class="nes-input" type="text" placeholder="정수로 입력" id="points" name="points" value="<?=$problem['points']?>" />
             </p>
             
             <p>
                 <label for="flag">정답(flag)을 입력해주세요 (최소 10자인 문자열)</label>
-                <input type="text" placeholder=" 길이가 최소 10인 문자열로 입력" id="flag" name="flag" value="<?=$problem['flag']?>" />
+                <input class="nes-input" type="text" placeholder=" 길이가 최소 10인 문자열로 입력" id="flag" name="flag" value="<?=$problem['flag']?>" />
             </p>
             
              <p>
@@ -157,4 +160,5 @@ if (array_key_exists("problem_id", $_GET)) {
 
         </form>
     </div>
+            </div>
 <? include("footer.php") ?>

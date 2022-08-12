@@ -35,7 +35,7 @@ include "util.php";
             $videoid = $val[1];
             
             echo "<div class='row'>";
-            echo "<div class='nes-container is-rounded is-dark' style='width:400px; height: 600px; margin-right:20px;'>";
+            echo "<div class='nes-container is-rounded is-dark' style='width:400px; height: 600px; margin-right:20px; margin-top:40px;'>";
             echo "<div class='column'>";
             echo "<h2>";
 

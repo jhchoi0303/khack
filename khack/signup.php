@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Validate username
     if(empty(trim($_POST["username"]))){
-        $username_err = "Please enter a username.";
+        $username_err = "유저네임 입력해주세요!";
     } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))){
         msg("유저네임에는 숫자, 언더바, 문자만 들어갑니다.");
     } else{
@@ -127,7 +127,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <form class="login" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
             	<div class="nes-field" style="margin-top:10px">
-                <label>유저 네임</label>
+                <label>유저 네임(한글x)</label>
                 <input style="width:200px" type="text" name="username" class="nes-input <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
                 <span class="invalid-feedback"><?php echo $username_err; ?></span></div>
             </div>

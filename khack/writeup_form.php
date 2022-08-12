@@ -45,19 +45,20 @@ if (array_key_exists("writeup_id", $_GET)) {
 
 
 ?>
-    <div class="column">
+    <div class="column" style="padding-top:10px;">
+    <div class="wrapper block" style="width: 40%; height: 700px; display: inline-block; padding: 50px;">
         <form name="writeup_form" action="<?=$action?>" method="post" class="fullwidth">
            <input type="hidden" name="id" value="<?=$writeup['writeup_id']?>"/>
             <h3>writeup 내용<?php echo $mode; ?></h3>
             
             <p>
                 <label for="title">writeup 제목</label>
-                <input type="text" placeholder="문제 제목 입력" id="title" name="title" value="<?=$writeup['writeup_title']?>"/>
+                <input class="nes-input" type="text" placeholder="문제 제목 입력" id="title" name="title" value="<?=$writeup['writeup_title']?>"/>
             </p>
             
             <p>
                 <label for="problem_id">문제 정보 (문제 번호)</label>
-                <input type="text" placeholder="문제 번호 입력" id="problem_id" name="problem_id" value="<?=$writeup['problem_id']?>"/>
+                <input class="nes-input" type="text" placeholder="문제 번호 입력" id="problem_id" name="problem_id" value="<?=$writeup['problem_id']?>"/>
             </p>
             
             
@@ -66,7 +67,7 @@ if (array_key_exists("writeup_id", $_GET)) {
                
                 </p>
                 <p>
-                 <textarea placeholder="writeup 본문  입력" id="content" name="content"  cols="40" style="height:100px; width=500px;"><?=$writeup['content']?></textarea>
+                <textarea class="nes-textarea" placeholder="writeup 본문  입력" id="content" name="content"  cols="40" style="height:100px; width=500px;"><?=$writeup['content']?></textarea>
             </p>
             
             
@@ -110,4 +111,5 @@ if (array_key_exists("writeup_id", $_GET)) {
 
         </form>
     </div>
+            </div>
 <? include("footer.php") ?>

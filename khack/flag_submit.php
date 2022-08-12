@@ -23,7 +23,7 @@ $action = "flag_check.php";
                 
                 <div style="background-color:#212529; padding: 1rem;" class="nes-field is-inline">    
                 <label for="flag" style="color:#fff;" >플래그를 입력해주세요</label>
-                <input type="text"  class="nes-input is-dark" placeholder="" id="flag" name="flag" value="" />
+                <input type="text" class="nes-input is-dark" placeholder="" id="flag" name="flag" value="" />
                 <button class=class="nes-input is-dark" style="margin-left: 20px; height: 50px; width:50px;"onclick="javascript:return validate();"><?=$mode?></button></div>
             </p>
             

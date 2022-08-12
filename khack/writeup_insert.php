@@ -71,14 +71,14 @@ while($row = mysqli_fetch_assoc($ret)){
 		if(!$ret){
 	
 		mysqli_query($conn, "rollback");
-    	msg('삭제할 수 없습니다.');
+    	msg('등록할 수 없습니다.');
 		
 		}
 	
 	else{
 	
 		mysqli_query($conn, "commit");
-    	s_msg ('성공적으로 삭제 되었습니다');
+    	s_msg ('성공적으로 등록 되었습니다');
     	echo "<meta http-equiv='refresh' content='0;url=writeup_list.php'>";
 		
 	}

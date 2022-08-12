@@ -23,7 +23,7 @@ $points = $_POST['points'];
 $flag=$_POST['flag'];
 
 
-$query =  "select * from problem group by flag";
+$query =  "select * from problem";
 $res = mysqli_query($conn, $query);
 $row_index = 1;
 
